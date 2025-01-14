@@ -170,3 +170,22 @@ if __name__ == "__main__":
 
     m = Menu()
 
+
+
+# ft.IconButton(
+#     icon_size=34,
+#     icon=ft.icons.HOME_MAX,
+#     icon_color='#4c0909',
+#     style=ft.ButtonStyle(shape=ft.CircleBorder()),
+#     bgcolor='#a17156',
+#     tooltip='MENU PRINCIPAL',
+#     disabled=True
+# ),
+# ft.IconButton(
+#     icon_size=32,
+#     icon=ft.icons.POST_ADD,
+#     icon_color='#4c0909',
+#     style=ft.ButtonStyle(shape=ft.CircleBorder()),
+#     bgcolor='#a17156',
+#     tooltip='ADICIONAR CARD'
+# )
