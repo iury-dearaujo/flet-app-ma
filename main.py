@@ -44,7 +44,7 @@ def main(page: ft.Page):
         _stack_main.update()
         if h_controls.controls.__len__() <= 2:
             h_controls.controls.append(ft.Row(controls=[ft.Text(
-                 value='Tela de exclusão',
+                 value='X',
                  size=24,
                  color=ft.colors.INDIGO_300)]))
         _stack_main.controls.append(_delete)
