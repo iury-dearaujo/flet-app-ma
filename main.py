@@ -42,10 +42,11 @@ def main(page: ft.Page):
     def btn_delete(e):
         _stack_main.controls.clear()
         _stack_main.update()
-        h_controls.controls.append(ft.Text(
-            value='Tela de exclusão',
-            size=24,
-            color=ft.colors.INDIGO_300))
+        if h_controls.controls.__len__() <= 2:
+            h_controls.controls.append(ft.Row(controls=[ft.Text(
+                 value='Tela de exclusão',
+                 size=24,
+                 color=ft.colors.INDIGO_300)]))
         _stack_main.controls.append(_delete)
         _stack_main.update()
 
