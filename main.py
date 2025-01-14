@@ -50,7 +50,7 @@ def main(page: ft.Page):
                     style=ft.ButtonStyle(shape=ft.CircleBorder()),
                     bgcolor='#6c89a8',
                     tooltip='ADICIONAR CARD',
-                    on_click=btn_edit
+                    on_click=btn_add
                 ),
                 ft.IconButton(
                     icon_size=28,
@@ -59,7 +59,7 @@ def main(page: ft.Page):
                     style=ft.ButtonStyle(shape=ft.CircleBorder()),
                     bgcolor='#6c89a8',
                     tooltip='LER CARD',
-                    on_click=btn_edit
+                    on_click=btn_read
                 ),
                 ft.IconButton(
                     icon_size=28,
@@ -77,7 +77,7 @@ def main(page: ft.Page):
                     style=ft.ButtonStyle(shape=ft.CircleBorder()),
                     bgcolor='#6c89a8',
                     tooltip='DELETAR CARD',
-                    on_click=btn_edit
+                    on_click=btn_delete
                 ),
                 ft.Container(expand=True)
             ]
@@ -160,10 +160,10 @@ def main(page: ft.Page):
         shadow=ft.BoxShadow(blur_radius=8, color='black'),
         alignment=ft.alignment.center,
         padding=ft.Padding(left=16, right=16, bottom=16, top=16),
-        content=controls.append(ft.Text(
+        content=ft.Text(
             value='Tela de exclusão',
             size=24,
-            color=ft.colors.INDIGO_300))
+            color=ft.colors.INDIGO_300)
     )
 
     _stack_main = ft.Stack(
