@@ -42,7 +42,7 @@ def main(page: ft.Page):
     def btn_delete(e):
         _stack_main.controls.clear()
         _stack_main.update()
-        h_controls.controls.append(content=ft.Text(
+        h_controls.controls.append(ft.Text(
             value='Tela de exclusão',
             size=24,
             color=ft.colors.INDIGO_300))
@@ -106,7 +106,10 @@ def main(page: ft.Page):
         shadow=ft.BoxShadow(blur_radius=8, color='black'),
         alignment=ft.alignment.center,
         padding=ft.Padding(left=16, right=16, bottom=16, top=16),
-        content=h_controls
+        content=ft.Text(
+            value='Tela inicial',
+            size=24,
+            color=ft.colors.INDIGO_300)
     )
 
     _create = ft.Container(
