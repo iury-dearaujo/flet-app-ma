@@ -10,6 +10,39 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.vertical_alignment = 'center'
     page.horizontal_alignment = 'center'
+    
+    def btn_edit(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_update)
+        _stack_main.update()
+
+    def btn_add(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_create)
+        _stack_main.update()
+
+    def btn_read(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_read)
+        _stack_main.update()
+
+    def btn_delete(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        if bottom_appbar_ctn.controls.__len__() <= 6:
+            bottom_appbar_ctn.controls.append(ft.Row(
+                controls=[
+                    # ft.ElevatedButton("Salvar", on_click=update_object),
+                    ft.ElevatedButton("Voltar")
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER
+            ))
+        _stack_main.controls.append(_delete)
+        _stack_main.update()
 
     bottom_appbar_ctn = ft.Row(controls=[
             ft.Container(expand=True),
@@ -51,40 +84,7 @@ def main(page: ft.Page):
                 ),
                 ft.Container(expand=True)
             ]
-    )
-    
-    def btn_edit(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_update)
-        _stack_main.update()
-
-    def btn_add(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_create)
-        _stack_main.update()
-
-    def btn_read(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_read)
-        _stack_main.update()
-
-    def btn_delete(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        if bottom_appbar_ctn.controls.__len__() <= 6:
-            bottom_appbar_ctn.controls.append(ft.Row(
-                controls=[
-                    # ft.ElevatedButton("Salvar", on_click=update_object),
-                    ft.ElevatedButton("Voltar")
-                ],
-                alignment=ft.MainAxisAlignment.CENTER,
-                vertical_alignment=ft.CrossAxisAlignment.CENTER
-            ))
-        _stack_main.controls.append(_delete)
-        _stack_main.update()
+        )
 
     page.bottom_appbar = ft.BottomAppBar(
         bgcolor='#acd3ff',
