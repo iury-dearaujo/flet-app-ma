@@ -32,16 +32,16 @@ def main(page: ft.Page):
     def btn_delete(e):
         _stack_main.controls.clear()
         _stack_main.update()
-        bottom_appbar_ctn[-1].expand=False
+        
         if bottom_appbar_ctn.controls.__len__() <= 6:
-            bottom_appbar_ctn.controls.append(ft.Row(
+            bottom_appbar_ctn.controls[-1]=ft.Row(
                 controls=[
                     # ft.ElevatedButton("Salvar", on_click=update_object),
                     ft.ElevatedButton("Voltar")
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER
-            ))
+            )
         _stack_main.controls.append(_delete)
         _stack_main.update()
 
