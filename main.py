@@ -11,53 +11,8 @@ def main(page: ft.Page):
     page.vertical_alignment = 'center'
     page.horizontal_alignment = 'center'
 
-
-    h_controls = ft.Row(
-                controls=[
-                    # ft.ElevatedButton("Salvar", on_click=update_object),
-                    ft.ElevatedButton("Voltar")
-                ],
-                alignment=ft.MainAxisAlignment.CENTER,
-                vertical_alignment=ft.CrossAxisAlignment.CENTER
-            )
-    
-    def btn_edit(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_update)
-        _stack_main.update()
-
-    def btn_add(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_create)
-        _stack_main.update()
-
-    def btn_read(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        _stack_main.controls.append(_read)
-        _stack_main.update()
-
-    def btn_delete(e):
-        _stack_main.controls.clear()
-        _stack_main.update()
-        if h_controls.controls.__len__() <= 2:
-            h_controls.controls.append(ft.Row(controls=[ft.Text(
-                 value='X',
-                 size=24,
-                 color=ft.colors.INDIGO_300)]))
-        _stack_main.controls.append(_delete)
-        _stack_main.update()
-
-    page.bottom_appbar = ft.BottomAppBar(
-        bgcolor='#acd3ff',
-        shape=ft.NotchShape.CIRCULAR,
-        height=60,
-        padding=ft.Padding(left=0, right=0, bottom=0, top=0),
-        content=ft.Row(
-            controls=[
-                ft.Container(expand=True),
+    bottom_appbar_ctn = ft.Row(controls=[
+            ft.Container(expand=True),
                 ft.IconButton(
                     icon_size=32,
                     icon=ft.icons.POST_ADD,
@@ -96,7 +51,47 @@ def main(page: ft.Page):
                 ),
                 ft.Container(expand=True)
             ]
-        )
+    )
+    
+    def btn_edit(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_update)
+        _stack_main.update()
+
+    def btn_add(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_create)
+        _stack_main.update()
+
+    def btn_read(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        _stack_main.controls.append(_read)
+        _stack_main.update()
+
+    def btn_delete(e):
+        _stack_main.controls.clear()
+        _stack_main.update()
+        if bottom_appbar_ctn.controls.__len__() <= 6:
+            bottom_appbar_ctn.controls.append(ft.Row(
+                controls=[
+                    # ft.ElevatedButton("Salvar", on_click=update_object),
+                    ft.ElevatedButton("Voltar")
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER
+            ))
+        _stack_main.controls.append(_delete)
+        _stack_main.update()
+
+    page.bottom_appbar = ft.BottomAppBar(
+        bgcolor='#acd3ff',
+        shape=ft.NotchShape.CIRCULAR,
+        height=60,
+        padding=ft.Padding(left=0, right=0, bottom=0, top=0),
+        content=bottom_appbar_ctn
     )
 
     _main = ft.Container(
@@ -163,7 +158,10 @@ def main(page: ft.Page):
         shadow=ft.BoxShadow(blur_radius=8, color='black'),
         alignment=ft.alignment.center,
         padding=ft.Padding(left=16, right=16, bottom=16, top=16),
-        content=h_controls
+        content=ft.Text(
+                 value='Tela de exclusão',
+                 size=24,
+                 color=ft.colors.INDIGO_300)
     )
 
     _stack_main = ft.Stack(
