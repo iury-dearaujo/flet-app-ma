@@ -11,6 +11,19 @@ def main(page: ft.Page):
     page.vertical_alignment = 'center'
     page.horizontal_alignment = 'center'
 
+
+    controls = []
+    controls.append(
+            ft.Row(
+                controls=[
+                    # ft.ElevatedButton("Salvar", on_click=update_object),
+                    ft.ElevatedButton("Voltar")
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER
+            )
+    )
+    
     def btn_edit(e):
         _stack_main.controls.clear()
         _stack_main.update()
@@ -139,18 +152,6 @@ def main(page: ft.Page):
             size=24,
             color=ft.colors.INDIGO_300)
     )
-    
-    controls = []
-    controls.append(
-            ft.Row(
-                controls=[
-                    # ft.ElevatedButton("Salvar", on_click=update_object),
-                    ft.ElevatedButton("Voltar")
-                ],
-                alignment=ft.MainAxisAlignment.CENTER,
-                vertical_alignment=ft.CrossAxisAlignment.CENTER
-            )
-        )
 
     _delete = ft.Container(
         width=400,
@@ -160,10 +161,10 @@ def main(page: ft.Page):
         shadow=ft.BoxShadow(blur_radius=8, color='black'),
         alignment=ft.alignment.center,
         padding=ft.Padding(left=16, right=16, bottom=16, top=16),
-        content=ft.Text(
+        content=[controls, ft.Text(
             value='Tela de exclusão',
             size=24,
-            color=ft.colors.INDIGO_300)
+            color=ft.colors.INDIGO_300)]
     )
 
     _stack_main = ft.Stack(
