@@ -32,6 +32,7 @@ def main(page: ft.Page):
     def btn_delete(e):
         _stack_main.controls.clear()
         _stack_main.update()
+        bottom_appbar_ctn[-1].expand=False
         if bottom_appbar_ctn.controls.__len__() <= 6:
             bottom_appbar_ctn.controls.append(ft.Row(
                 controls=[
