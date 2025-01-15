@@ -2,7 +2,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = ' Programa de relatório | Uber Motorista'
+    page.title = ' Programa de relatório | Uber / 99pop'
     page.bgcolor = '#130e16'
     page.window_width = 450
     page.window_height = 700
